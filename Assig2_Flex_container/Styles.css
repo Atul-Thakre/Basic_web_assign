@@ -1,0 +1,38 @@
+.web-series-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .web-series {
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .series-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .series-image:hover {
+    transform: scale(1.1);
+  }
+  
+  .series-name {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .series-description {
+    font-size: 14px;
+  }
+  
+  .series-episodes, .series-director {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
