@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Books</title>
+</head>
+
+<body>
+  <script>
+    class Book {
+      constructor(bookId, bookName, bookAuthor, bookPrice) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.bookAuthor = bookAuthor;
+        this.bookPrice = bookPrice;
+      }
+
+      getAllBookDetails() {
+        //return `Book ID: ${this.bookId}, Book Name: ${this.bookName}, Author: ${this.bookAuthor}, Price: ${this.bookPrice}`;
+        return `${this.bookName} ID is ${this.bookId} And price is ${this.bookPrice} Is written by ${this.bookAuthor}`
+      }
+    }
+
+    // Creating Book objects
+    const books = [
+      new Book(1, "Fundamental of java", "S Chand", 500),
+      new Book(2, "Basic Maths", "R.Rakesh", 700),
+      new Book(3, "Python logics", "Mark Wise", 200.00),
+      new Book(4, "Let us c", "Kanetkar", 899.50),
+      new Book(5, "AI", "Robert", 2000)
+    ];
+
+    // 1. Iterate Book array using forEach
+    console.log("All Books:");
+    books.forEach(book => console.log(book.getAllBookDetails()));
+
+    // 2. Find all books having price less than 500
+    console.log("\nBooks with price less than 500:");
+    const booksWithPriceLessThan500 = books.filter(book => book.bookPrice < 500);
+    booksWithPriceLessThan500.forEach(book => console.log(book.getAllBookDetails()));
+
+    // 3. Find first book having price greater than 600
+    console.log("\nFirst book with price greater than 600:");
+    const bookWithPriceGreaterThan600 = books.find(book => book.bookPrice > 600);
+    if (bookWithPriceGreaterThan600) {
+      console.log(bookWithPriceGreaterThan600.getAllBookDetails());
+    } else {
+      console.log("No book found with price greater than 600.");
+    }
+
+    // 4. Find all Java related books
+    console.log("\nJava related books:");
+    const javaRelatedBooks = books.filter(book => book.bookName.toLowerCase().includes("java"));
+    javaRelatedBooks.forEach(book => console.log(book.getAllBookDetails()));
+
+    // 5. Make sum of all Book Prices
+    const totalBookPrice = books.reduce((total, book) => total + book.bookPrice,0);
+    console.log("\nTotal Book Price: " + totalBookPrice);
+
+    // 6. Store Book Author of every book in separate array
+    const bookAuthors = books.map(book => book.bookAuthor);
+    console.log("\nBook Authors:");
+    bookAuthors.forEach(author => console.log(author));
+
+    // 7. Display Books having Author name starting with M/m
+    console.log("\nBooks with Author name starting with M/m:");
+    const booksWithMAuthors = books.filter(book => book.bookAuthor.charAt(0).toLowerCase() === 'm');
+    booksWithMAuthors.forEach(book => console.log(book.getAllBookDetails()));
+  </script>
+</body>
+
+</html>
