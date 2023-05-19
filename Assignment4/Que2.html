@@ -1,0 +1,40 @@
+/* Consider following Book Names Array
+['Learn Java','Basics of Python','Advanced java Concepts','Web Basics', 'Easy learnng Python', 'Web Fundamentals', 'JAVA fundamentals']
+
+1. Find all books starting with 'Web'  : ['Web Basics','Web Fundamentals']
+2. Find all books which are related to Java :['Learn Java', 'Advanced java Concepts','JAVA fundamentals']
+3. Prepend 'Neo-' to every Book Name and Display new book name
+4. Display sum of length of every bookname */
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+const bookNames = ['Learn Java', 'Basics of Python', 'Advanced java Concepts', 'Web Basics', 'Easy learnng Python', 'Web Fundamentals', 'JAVA fundamentals'];
+
+
+const l = bookNames.filter(book => book.startsWith('Web'));
+console.log("Books starting with 'Web':", l);
+
+
+const m = bookNames.filter(book => book.toLowerCase().includes('java'));
+console.log("Books related to Java:", m);
+
+
+const o = bookNames.map(book => 'Neo-' + book);
+console.log("New book names:", o);
+
+
+const a = bookNames.reduce((sum, book) => sum + book.length, 0);
+console.log("Sum of lengths of every book name:", a);
+
+</script>
+
+</body>
+</html>
+
+ 
+
+
